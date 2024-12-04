@@ -1,0 +1,208 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #282c34;
+  color: white;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.input {
+  font-size: 1rem;
+  color:#ffffff;
+  background-color: #444;
+  padding: 8px 16px;
+  border: 2px solid #ff3d00;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 2ch;
+}
+
+.inputName {
+  font-size: 1rem;
+  color:#ffffff;
+  background-color: #444;
+  padding: 8px 16px;
+  border: 2px solid #ff3d00;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 15ch;
+}
+
+.inputName:focus {
+  color:#ffffff;
+  background-color: #444;
+  border: 2px solid #ff3d00;
+}
+
+/* El estilo para el temporizador de 10 minutos */
+#timer-10min {
+  font-size: 5rem; /* Reducir el tamaño a la mitad del tamaño original o menos */
+  font-weight: bold;
+  background-color: black;
+  color: #ff3d00;
+  border: 10px solid #ff3d00;
+  border-radius: 10px;
+  padding: 20px 40px; /* Reducir el padding para que quede más pequeño */
+  box-sizing: border-box;
+  margin-bottom: 30px; /* Aumentar el margen entre el temporizador de 10 minutos y el de 24 */
+  position: relative;
+  top: 20px; /* Mantiene el temporizador de 10 minutos arriba */
+}
+
+/* Contenedor de los temporizadores */
+#timer-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Coloca el temporizador de 10 minutos arriba */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+  margin-top: 20px; /* Ajuste para evitar superposiciones */
+}
+
+/* Temporizador de 24 segundos */
+.timer {
+  font-size: 20rem; /* Ajuste de tamaño en pantallas grandes */
+  font-weight: bold;
+  background-color: black;
+  color: #ff3d00;
+  border: 10px solid #ff3d00;
+  border-radius: 10px;
+  padding: 50px 100px;
+  box-sizing: border-box;
+  transition: font-size 0.3s ease;
+}
+
+/* Estilo de los puntos de los equipos */
+.points {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ff3d00;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.team-name{
+  font-size: 2rem;
+}
+
+#left-points {
+  left: 5%;
+}
+
+#right-points {
+  right: 5%;
+}
+
+
+/* Estilo para los botones */
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #222;
+  border-top: 2px solid #444;
+  flex-wrap: nowrap; /* Evitar que los botones se desborden */
+  gap: 20px; /* Espaciado entre los grupos de botones */
+}
+
+.score-buttons,
+.timer-buttons {
+  display: flex;
+  gap: 5px; /* Espacio pequeño entre los botones */
+  align-items: center;
+}
+
+/* Aseguramos que los tres botones centrales estén alineados en fila */
+.timer-buttons {
+  display: flex;
+  justify-content: center; /* Alineamos los botones al centro */
+  gap: 5px; /* Espacio pequeño entre los botones */
+  width: 100%;
+}
+
+.buttons-container button {
+  font-size: 1rem;
+  padding: 8px 16px;
+  background-color: #ff3d00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap; /* Evita que el texto de los botones se divida */
+}
+
+.buttons-container button:hover {
+  background-color: #e53900;
+}
+
+#pause-resume-btn-10min.resumed {
+  background-color: #4caf50;
+}
+
+#pause-resume-btn.paused {
+  background-color: #4caf50;
+}
+
+.reset-button button {
+  font-size: 1rem;
+  color:red;
+  background-color: #444;
+  padding: 10px 20px;
+  border: 2px solid #f7f7f7;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button button:hover {
+  background-color:red;
+  color: #f7f7f7;
+}
+
+@media (max-width: 768px) {
+  .timer {
+    font-size: 12rem; /* Reducir el tamaño del temporizador en pantallas pequeñas */
+    padding: 20px 40px;
+  }
+
+  .points {
+    font-size: 3rem;
+  }
+
+  .buttons-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .score-buttons,
+  .timer-buttons {
+    flex-direction: row; /* Los botones estarán en fila */
+    gap: 5px; /* Espacio pequeño entre los botones */
+    justify-content: center;
+    width: 100%;
+  }
+
+  .buttons-container button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    flex-grow: 1; /* Permite que los botones ocupen el mismo espacio */
+  }
+
+  .score-buttons {
+    width: 100%;
+    justify-content: space-around; /* Espaciado entre los botones del equipo */
+  }
+}
+
+@media (max-width: 480px) {
+  .timer {
+    font-size: 8rem; /* Tamaño aún más pequeño en pantallas más pequeñas */
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reloj de 24 Segundos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body onclick="resetScreen()" id="body">
+  <div id="timer-container">
+    <!-- Temporizador de 10 minutos -->
+    <div id="timer-10min" class="timer">10:00</div>
+    <div id="left-points" class="points">
+      <p id="name-left" class="team-name">Equipo 1</p>
+      <p id="points-value-left">0</p>
+    </div> <!-- Puntos equipo izquierdo -->
+    <div id="timer" class="timer">24</div>
+    <div id="right-points" class="points">
+      <p id="name-right" class="team-name">Equipo 2</p>
+      <p id="points-value-right">0</p>
+    </div> <!-- Puntos equipo derecho -->
+
+  </div>
+
+  <div class="buttons-container">
+    <!-- Botones de los equipos -->
+    <div class="score-buttons left-buttons">
+      <button onclick="changePoints('left', 1)">+1</button>
+      <button onclick="changePoints('left', -1)">-1</button>
+      <input type="text" name="Equipo" class="inputName" id="input-team-name-left" placeholder="Equipo">
+    </div>
+    
+    <!-- Botones de temporizador -->
+    <div class="timer-buttons">
+      <button onclick="startTimer(24)">Inicio 24s</button>
+      <button onclick="startTimer(14)">Inicio 14s</button>
+      <button id="pause-resume-btn" onclick="pauseOrResumeTimer()">Pausa</button>
+    </div>
+    <div class="timer-buttons">
+      <button onclick="playChicharra()">🔊</button>
+    </div>
+    <div class="reset-button">
+      <button onclick="resetPage()">RESET</button>
+    </div>
+    <!-- Botones para el temporizador de 10 minutos -->
+    <div class="timer-buttons">
+      <input type="" id="input-time" class="input" placeholder="Minutos" min="1" value="10">
+      <button onclick="startTimer10min()">Inicio</button>
+      <button id="pause-resume-btn-10min" onclick="pauseOrResumeTimer10min()">Pausa</button>
+    </div>
+
+    <!-- Botones del equipo derecho -->
+    <div class="score-buttons right-buttons">
+      <input type="text" name="Equipo" class="inputName" id="input-team-name-right" placeholder="Equipo">
+      <button onclick="changePoints('right', 1)">+1</button>
+      <button onclick="changePoints('right', -1)">-1</button>
+    </div>
+  </div>
+
+  <audio id="endSound" src="sound/end.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

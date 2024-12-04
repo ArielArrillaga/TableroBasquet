@@ -166,7 +166,7 @@ body {
   color: #f7f7f7;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .timer {
     font-size: 12rem; /* Reducir el tamaño del temporizador en pantallas pequeñas */
     padding: 20px 40px;
